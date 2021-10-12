@@ -14,7 +14,13 @@ let templateFooter=document.getElementById("templateFooter").content
 let fragment=document.createDocumentFragment()
 //eventos
 document.addEventListener('DOMContentLoaded',()=>{
+
     peticionAsincronica()
+    if(localStorage.getItem('carrito')){
+        carrito=JSON.parse(localStorage.getItem('carrito'))
+        tableBody();        
+    }
+    
 })
 contenedorProductos.addEventListener("click",function(e){
     filtrarBotonProductos(e)
@@ -85,13 +91,15 @@ let tableBody=function () {
         templateBody.querySelectorAll('td')[0].textContent=element.title
         templateBody.querySelectorAll('td')[1].textContent=element.cantidad
         templateBody.querySelectorAll('td')[3].textContent=element.cantidad*element.precio
-        templateBody.querySelectorAll('button')[0].dataset.id=element.id
+        templateBody.querySelectorAll('button')[0].dataset.id=element.id    
         templateBody.querySelectorAll('button')[1].dataset.id=element.id
         let clone=templateBody.cloneNode(true)
         fragment.appendChild(clone)
     })
     tbodyProductos.appendChild(fragment)
     tableFoot()
+    localStorage.setItem('carrito',JSON.stringify(carrito))
+
 
 }
 
