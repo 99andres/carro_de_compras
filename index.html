@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>accion</th>
+                    <th>Total</th>
+
+                </tr>
+            </thead>
+            <tbody id="tbodyProductos">
+                
+            </tbody>
+            <tfoot>
+                <tr id="tfoot">
+                    <th colspan="5">comprar-carrito vacio</th>
+                </tr>
+            </tfoot>
+        </table>
+        <div id="contenedorProductos" class="contenedorProductos"></div>
+    </div>
+    
+    <template id="templateProducto">
+        <div class="contenedorProductoItems">
+            <img alt="">
+            <div class="contenedorDatos">
+                 <h5>title</h5>   
+                 <p>precio</p>
+                 <button class="btnComprar">comprar</button>   
+            </div>
+        </div>
+
+    </template>
+    <template id="templateBody">
+        <tr>
+            <th>id</th>
+            <td>nombre</td>
+            <td>cantidad</td>
+            <td>
+                <button class="mas">+</button>
+                <button class="menos">-</button>
+            </td>
+            <td>total</td>
+
+        </tr>
+    </template>
+    <template id="templateFooter">
+        <th>Total Productos</th>    
+        <th>productos</th>
+        <th><button id="btnVaciar">vaciar</button></th>
+        <th>Valor Total</th>
+        <th>$<span></span></th>
+    </template>
+    <script src="index.js"></script>
+</body>
+</html>
